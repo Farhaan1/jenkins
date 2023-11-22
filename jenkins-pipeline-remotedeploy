@@ -9,7 +9,7 @@ pipeline {
                git 'https://github.com/Farhaan1/jenkins.git'
             }
         }
-        stage('Build') {
+        stage('Build package') {
             steps {
                 sh 'mvn clean package'
             }
