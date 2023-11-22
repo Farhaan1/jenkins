@@ -13,7 +13,11 @@ pipeline {
             steps {
                 sh 'mvn clean package'
             }
+        }  
+    }
+ post {
+        always {
+             emailext body: '$DEFAULT_BODY', subject: '$DEFAULT_SUBJECT', to: '$DEFAULT_REPLYTO'
         }
-        
     }
 }
